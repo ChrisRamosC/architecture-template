@@ -1,0 +1,13 @@
+---
+interface Props {
+  value: string;
+  label: string;
+}
+
+const { value, label } = Astro.props;
+---
+
+<div class="grid grid-cols-[35%_65%] gap-2 items-center md:flex md:flex-col md:items-start md:mr-10">
+  <span class="playfair text-5xl">{value}</span>
+  <span class="text-sm uppercase tracking-wide">{label}</span>
+</div>

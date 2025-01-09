@@ -1,0 +1,40 @@
+---
+import { Icon } from 'astro-icon/components';
+import SectionName from '@components/shared/SectionName.astro';
+import SectionTitle from '@components/shared/SectionTitle.astro';
+import ServiceItem from '@components/shared/ServiceItem.astro';
+import SectionContainer from './shared/SectionContainer.astro';
+
+const services = [
+  {
+    icon: 'architectural',
+    title: 'Architectural & Interior Design',
+    description:
+      'Non diam pretium tristique augue placerat dolor. Accumsan nibh nunc, molestie volutpat ipsum, ultricies.',
+  },
+  {
+    icon: 'building-renovation',
+    title: 'Building Renovation',
+    description:
+      'Non diam pretium tristique augue placerat dolor. Accumsan nibh nunc, molestie volutpat ipsum, ultricies.',
+  },
+  {
+    icon: 'construction-management',
+    title: 'Construction Management',
+    description:
+      'Non diam pretium tristique augue placerat dolor. Accumsan nibh nunc, molestie volutpat ipsum, ultricies.',
+  },
+];
+---
+
+<SectionContainer id='services' class='space-y-10 md:space-y-20'>
+  <div class='space-y-8'>
+    <SectionName title="Our Services" />
+    <SectionTitle class="max-w-[800px] text-4xl lg:text-6xl">
+      We provide the <b class="italic">best solutions</b> for your dream home
+    </SectionTitle>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    {services.map((service) => <ServiceItem {...service} />)}
+  </div>
+</SectionContainer>

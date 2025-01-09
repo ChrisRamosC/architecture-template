@@ -1,0 +1,19 @@
+---
+import Cta from '@/assets/Cta.astro';
+import { Image } from 'astro:assets';
+---
+
+<div class="relative">
+  <div
+    class="absolute left-1/2 lg:left-40 transform -translate-x-1/2 -translate-y-1/2"
+  >
+    <Cta class="" />
+  </div>
+  <Image
+    src="/assets/images/hero-image.webp"
+    alt="Hero Image"
+    class="w-full h-[640px] object-cover"
+    width={1920}
+    height={1080}
+  />
+</div>

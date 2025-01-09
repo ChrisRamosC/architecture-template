@@ -1,0 +1,68 @@
+---
+// filepath: /d:/Code/Astro/architecture-template/src/components/Awards.astro
+import GermanAward from '@/assets/GermanAward.astro';
+import GoldAward from '@/assets/GoldAward.astro';
+import IfAward from '@/assets/IfAward.astro';
+import GoodAward from '@/assets/GoodAward.astro';
+
+const awards = [
+  {
+    icon: GermanAward,
+    title: 'German Design Award',
+    year: '2021',
+  },
+  {
+    icon: GoldAward,
+    title: "Gold A' Design Award",
+    year: '2021',
+  },
+  {
+    icon: IfAward,
+    title: 'IF Design Award',
+    year: '2020',
+  },
+  {
+    icon: GoodAward,
+    title: 'Good Design Award',
+    year: '2019',
+  },
+];
+---
+
+<div
+  class="max-h-[440px] bg-neutral-900 px-5 md:px-10 lg:px-28 py-6 flex justify-between items-start content-center"
+>
+  <div class="flex items-center">
+    <h2
+      class="vertical-text md:my-auto text-2xl font-light italic text-zinc-400"
+    >
+      Awards
+    </h2>
+    <hr class="w-6 md:w-16 mx-5" />
+  </div>
+
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-x-10 md:gap-y-8 lg:gap-16 right"
+  >
+    {
+      awards.map((award) => (
+        <div class="flex items-center gap-6 group">
+          <div class="relative">
+            <award.icon />
+          </div>
+          <div class="text-neutral-100 text-sm">
+            <h3>{award.title}</h3>
+            <p>{award.year}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <style>
+    .vertical-text {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+    }
+  </style>
+</div>

@@ -1,0 +1,56 @@
+---
+import SectionTitle from '@components/shared/SectionTitle.astro';
+import SectionName from '@components/shared/SectionName.astro';
+import { Image } from 'astro:assets';
+import Statistic from './shared/Statistic.astro';
+import SectionDivider from './shared/SectionDivider.astro';
+import SectionContainer from './shared/SectionContainer.astro';
+---
+
+<SectionContainer
+  id="about"
+  class="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center"
+>
+  <div class="flex flex-col gap-6">
+    <SectionName title="About Us" />
+    <SectionTitle class="text-4xl lg:text-6xl">
+      We help to bring your dream home to reality
+    </SectionTitle>
+
+    <p class="lg:text-lg text-neutral-700">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus
+      fringilla dui amet faucibus nam. Erat id laoreet posuere etiam morbi.
+    </p>
+
+    <p class="lg:text-lg text-neutral-700">
+      Tempor dolor elementum tellus non ipsum faucibus. Justo, magna mauris
+      posuere auctor justo. Habitant proin aliquet volutpat leo ultricies. Dui
+      blandit eget vitae turpis ultrices aliquet nunc. Faucibus sit odio
+      bibendum lobortis diam.
+    </p>
+  </div>
+
+  <div class="mt-20 mb-12 md:mt-28 md:mb-24 lg:mt-0 lg:mb-0">
+    <div class="grid grid-cols-2 gap-2 md:gap-5 min-h-80 lg:h-[560px]">
+      <img
+        src="/assets/images/about-image-1.webp"
+        alt="Modern kitchen interior"
+        class="w-full h-auto object-cover"
+      />
+      <div class="flex items-end">
+        <img
+          src="/assets/images/about-image-2.webp"
+          alt="Bedroom interior"
+          class="w-full h-auto object-cover"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 col-span-2">
+    <Statistic value="100%" label="Projects Completed" />
+    <Statistic value="250" label="Employees on worldwide" />
+    <Statistic value="3469" label="Projects completed on 60 countries" />
+  </div>
+</SectionContainer>
+<SectionDivider />

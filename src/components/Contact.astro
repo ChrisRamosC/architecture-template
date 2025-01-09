@@ -1,0 +1,57 @@
+---
+import SectionTitle from '@components/shared/SectionTitle.astro';
+import SectionDivider from './shared/SectionDivider.astro';
+
+const contactInfo = {
+  title: 'Brooklyn, New York',
+  address:
+    '962 Fifth Avenue Str, 3rd Floor-Trump Building NY 10006, United State.',
+  email: 'hello@landify.design',
+  phone: '+8(663)125-08-59'
+};
+---
+
+<section class="lg:w-[1216px] md:w-[688px] mx-5 md:mx-auto space-y-20">
+  <SectionDivider />
+  <div class='grid grid-cols-1 md:grid-cols-2 gap-10'>
+    <div class="space-y-4">
+      <SectionTitle class="text-3xl md:text-5xl">
+        Kick-start your dream home with us
+      </SectionTitle>
+      <a
+        href="#"
+        class="italic text-3xl md:text-5xl text-primary-600 underline"
+      >
+        Send us a hi
+      </a>
+    </div>
+    <div class="flex flex-col gap-8 md:text-right">
+      <address>
+        <SectionTitle class="text-2xl">
+          {contactInfo.title}
+        </SectionTitle>
+        <p>
+          {contactInfo.address}
+        </p>
+      </address>
+      <div>
+        <p>Email us at</p>
+        <a
+          class="text-2xl text-primary-600 playfair"
+          href={`mailto:${contactInfo.email}`}
+        >
+          {contactInfo.email}
+        </a>
+      </div>
+      <div>
+        <p>If you're hurry, quick call for us</p>
+        <a
+          class="text-2xl text-primary-600 playfair"
+          href={` tel:${contactInfo.phone}`}
+          >{contactInfo.phone}
+        </a>
+      </div>
+    </div>
+  </div>
+  <SectionDivider />
+</section>

@@ -1,0 +1,36 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const socialMediaList = [
+  {
+    name: 'youtube',
+    url: 'https://www.chrisram.dev/',
+  },
+  {
+    name: 'instagram',
+    url: 'https://www.instagram.com/chrisram.dev/',
+  },
+
+  {
+    name: 'linkedin',
+    url: 'https://www.linkedin.com/in/chrisram',
+  },
+  {
+    name: 'github',
+    url: 'https://github.com/ChrisRamosC',
+  },
+];
+---
+
+<div class="flex gap-4 items-center">
+  <p class="font-semibold tracking-widest text-neutral-700">CONNECT</p>
+  <div class="flex gap-4">
+    {
+      socialMediaList.map((socialMedia) => (
+        <a href={socialMedia.url} target="_blank" rel="noopener noreferrer">
+          <Icon name={socialMedia.name} class="w-10 h-10" />
+        </a>
+      ))
+    }
+  </div>
+</div>
